@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel='stylesheet' href='./Style.css' />
+
+	<title>Nobel Prize Winners</title>
+
+</head>
+
+<body>
+	<header>
+		<div class="parallax">
+			<br>
+			<h1>Nobel Price Winners</h1>
+			<h3>List of al the Laureates from 1900 till 2018</h3>
+			<br>
+			<p style="font-size:16px">The Nobel Prize is a set of annual international awards bestowed in several
+				categories by Swedish and Norwegian institutions in recognition of academic, cultural, or scientific
+				advances.
+			</p>
+			<br>
+			<p>The Royal Swedish Academy of Sciences awards the Nobel Prize in Chemistry, the Nobel Prize in Physics,
+				and the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel; the Nobel Assembly at
+				the Karolinska Institute awards the Nobel Prize in Physiology or Medicine; the Swedish Academy grants
+				the Nobel Prize in Literature; and the Nobel Peace Prize is awarded by the Norwegian Nobel Committee.
+			</p>
+			<br>
+			<br>
+			<br>
+			<br>
+			<p>Using the search functionality in the Search-Box, it is possible to find the Nobel Prize Winners from the
+				1901 till the year 2018 for all the categories.</p>
+			<!--<img src="images/nobel_b.png" alt="Alfred Nobel img." id="header_img">-->
+		</div>
+	</header>
+
+
+	<div id="myBtnContainer">
+
+	</div>
+
+	<div id="serch-bar">
+		<div class="search_panel">
+
+			<!--creates an input box to display the year from -->
+			<input type="text" id="textInputmin" value="" placeholder="From year:">
+
+			<!--sliders made following the idea on https://css-tricks.com/value-bubbles-for-range-inputs/ -->
+			<div class="slidecontainer">
+				<input type="range" min="1900" max="2018" value="1900" class="slider" id="RangeMin"
+					onchange="updateTextInput1('From: '+ this.value)"> </div>
+
+			<div class="slidecontainer">
+				<input type="range" min="1900" max="2018" value="2018" class="slider" id="RangeMax"
+					onchange="updateTextInput2('Until the year: '+this.value)">
+
+				<!--creates an input box to display the year to -->
+				<input type="text" id="textInputmax" value="" placeholder="To year:"><br><br></div>
+
+			<select id="cat_select">
+				<option value="peace">Peace</option>
+				<option value="medicine">Medicine</option>
+				<option value="economics">Economics</option>
+				<option value="chemistry">Chemistry</option>
+				<option value="physics">Physics</option>
+				<option value="literature">Literature</option>
+			</select>
+
+
+			<!--Submit button -->
+			<button id="submit_button" type="submit" value="SEND" class="btn">Submit</button>
+
+
+		</div>
+
+		<div id="Container-box">
+			<div id="Gender_select"></div>
+			<div id="country_select">
+
+				<!--List of countries -->
+				<select id="selcounties">
+					<option value="ALL">All</option>
+					<option value="AF">Afghanistan</option>
+					<option value="AX">Åland Islands</option>
+					<option value="AL">Albania</option>
+					<option value="DZ">Algeria</option>
+					<option value="AS">American Samoa</option>
+					<option value="AD">Andorra</option>
+					<option value="AO">Angola</option>
+					<option value="AI">Anguilla</option>
+					<option value="AQ">Antarctica</option>
+					<option value="AG">Antigua and Barbuda</option>
+					<option value="AR">Argentina</option>
+					<option value="AM">Armenia</option>
+					<option value="AW">Aruba</option>
+					<option value="AU">Australia</option>
+					<option value="AT">Austria</option>
+					<option value="AZ">Azerbaijan</option>
+					<option value="BS">Bahamas</option>
+					<option value="BH">Bahrain</option>
+					<option value="BD">Bangladesh</option>
+					<option value="BB">Barbados</option>
+					<option value="BY">Belarus</option>
+					<option value="BE">Belgium</option>
+					<option value="BZ">Belize</option>
+					<option value="BJ">Benin</option>
+					<option value="BM">Bermuda</option>
+					<option value="BT">Bhutan</option>
+					<option value="BO">Bolivia, Plurinational State of</option>
+					<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+					<option value="BA">Bosnia and Herzegovina</option>
+					<option value="BW">Botswana</option>
+					<option value="BV">Bouvet Island</option>
+					<option value="BR">Brazil</option>
+					<option value="IO">British Indian Ocean Territory</option>
+					<option value="BN">Brunei Darussalam</option>
+					<option value="BG">Bulgaria</option>
+					<option value="BF">Burkina Faso</option>
+					<option value="BI">Burundi</option>
+					<option value="KH">Cambodia</option>
+					<option value="CM">Cameroon</option>
+					<option value="CA">Canada</option>
+					<option value="CV">Cape Verde</option>
+					<option value="KY">Cayman Islands</option>
+					<option value="CF">Central African Republic</option>
+					<option value="TD">Chad</option>
+					<option value="CL">Chile</option>
+					<option value="CN">China</option>
+					<option value="CX">Christmas Island</option>
+					<option value="CC">Cocos (Keeling) Islands</option>
+					<option value="CO">Colombia</option>
+					<option value="KM">Comoros</option>
+					<option value="CG">Congo</option>
+					<option value="CD">Congo, the Democratic Republic of the</option>
+					<option value="CK">Cook Islands</option>
+					<option value="CR">Costa Rica</option>
+					<option value="CI">Côte d'Ivoire</option>
+					<option value="HR">Croatia</option>
+					<option value="CU">Cuba</option>
+					<option value="CW">Curaçao</option>
+					<option value="CY">Cyprus</option>
+					<option value="CZ">Czech Republic</option>
+					<option value="DK">Denmark</option>
+					<option value="DJ">Djibouti</option>
+					<option value="DM">Dominica</option>
+					<option value="DO">Dominican Republic</option>
+					<option value="EC">Ecuador</option>
+					<option value="EG">Egypt</option>
+					<option value="SV">El Salvador</option>
+					<option value="GQ">Equatorial Guinea</option>
+					<option value="ER">Eritrea</option>
+					<option value="EE">Estonia</option>
+					<option value="ET">Ethiopia</option>
+					<option value="FK">Falkland Islands (Malvinas)</option>
+					<option value="FO">Faroe Islands</option>
+					<option value="FJ">Fiji</option>
+					<option value="FI">Finland</option>
+					<option value="FR">France</option>
+					<option value="GF">French Guiana</option>
+					<option value="PF">French Polynesia</option>
+					<option value="TF">French Southern Territories</option>
+					<option value="GA">Gabon</option>
+					<option value="GM">Gambia</option>
+					<option value="GE">Georgia</option>
+					<option value="DE">Germany</option>
+					<option value="GH">Ghana</option>
+					<option value="GI">Gibraltar</option>
+					<option value="GR">Greece</option>
+					<option value="GL">Greenland</option>
+					<option value="GD">Grenada</option>
+					<option value="GP">Guadeloupe</option>
+					<option value="GU">Guam</option>
+					<option value="GT">Guatemala</option>
+					<option value="GG">Guernsey</option>
+					<option value="GN">Guinea</option>
+					<option value="GW">Guinea-Bissau</option>
+					<option value="GY">Guyana</option>
+					<option value="HT">Haiti</option>
+					<option value="HM">Heard Island and McDonald Islands</option>
+					<option value="VA">Holy See (Vatican City State)</option>
+					<option value="HN">Honduras</option>
+					<option value="HK">Hong Kong</option>
+					<option value="HU">Hungary</option>
+					<option value="IS">Iceland</option>
+					<option value="IN">India</option>
+					<option value="ID">Indonesia</option>
+					<option value="IR">Iran, Islamic Republic of</option>
+					<option value="IQ">Iraq</option>
+					<option value="IE">Ireland</option>
+					<option value="IM">Isle of Man</option>
+					<option value="IL">Israel</option>
+					<option value="IT">Italy</option>
+					<option value="JM">Jamaica</option>
+					<option value="JP">Japan</option>
+					<option value="JE">Jersey</option>
+					<option value="JO">Jordan</option>
+					<option value="KZ">Kazakhstan</option>
+					<option value="KE">Kenya</option>
+					<option value="KI">Kiribati</option>
+					<option value="KP">Korea, Democratic People's Republic of</option>
+					<option value="KR">Korea, Republic of</option>
+					<option value="KW">Kuwait</option>
+					<option value="KG">Kyrgyzstan</option>
+					<option value="LA">Lao People's Democratic Republic</option>
+					<option value="LV">Latvia</option>
+					<option value="LB">Lebanon</option>
+					<option value="LS">Lesotho</option>
+					<option value="LR">Liberia</option>
+					<option value="LY">Libya</option>
+					<option value="LI">Liechtenstein</option>
+					<option value="LT">Lithuania</option>
+					<option value="LU">Luxembourg</option>
+					<option value="MO">Macao</option>
+					<option value="MK">Macedonia, the former Yugoslav Republic of</option>
+					<option value="MG">Madagascar</option>
+					<option value="MW">Malawi</option>
+					<option value="MY">Malaysia</option>
+					<option value="MV">Maldives</option>
+					<option value="ML">Mali</option>
+					<option value="MT">Malta</option>
+					<option value="MH">Marshall Islands</option>
+					<option value="MQ">Martinique</option>
+					<option value="MR">Mauritania</option>
+					<option value="MU">Mauritius</option>
+					<option value="YT">Mayotte</option>
+					<option value="MX">Mexico</option>
+					<option value="FM">Micronesia, Federated States of</option>
+					<option value="MD">Moldova, Republic of</option>
+					<option value="MC">Monaco</option>
+					<option value="MN">Mongolia</option>
+					<option value="ME">Montenegro</option>
+					<option value="MS">Montserrat</option>
+					<option value="MA">Morocco</option>
+					<option value="MZ">Mozambique</option>
+					<option value="MM">Myanmar</option>
+					<option value="NA">Namibia</option>
+					<option value="NR">Nauru</option>
+					<option value="NP">Nepal</option>
+					<option value="NL">Netherlands</option>
+					<option value="NC">New Caledonia</option>
+					<option value="NZ">New Zealand</option>
+					<option value="NI">Nicaragua</option>
+					<option value="NE">Niger</option>
+					<option value="NG">Nigeria</option>
+					<option value="NU">Niue</option>
+					<option value="NF">Norfolk Island</option>
+					<option value="MP">Northern Mariana Islands</option>
+					<option value="NO">Norway</option>
+					<option value="OM">Oman</option>
+					<option value="PK">Pakistan</option>
+					<option value="PW">Palau</option>
+					<option value="PS">Palestinian Territory, Occupied</option>
+					<option value="PA">Panama</option>
+					<option value="PG">Papua New Guinea</option>
+					<option value="PY">Paraguay</option>
+					<option value="PE">Peru</option>
+					<option value="PH">Philippines</option>
+					<option value="PN">Pitcairn</option>
+					<option value="PL">Poland</option>
+					<option value="PT">Portugal</option>
+					<option value="PR">Puerto Rico</option>
+					<option value="QA">Qatar</option>
+					<option value="RE">Réunion</option>
+					<option value="RO">Romania</option>
+					<option value="RU">Russian Federation</option>
+					<option value="RW">Rwanda</option>
+					<option value="BL">Saint Barthélemy</option>
+					<option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+					<option value="KN">Saint Kitts and Nevis</option>
+					<option value="LC">Saint Lucia</option>
+					<option value="MF">Saint Martin (French part)</option>
+					<option value="PM">Saint Pierre and Miquelon</option>
+					<option value="VC">Saint Vincent and the Grenadines</option>
+					<option value="WS">Samoa</option>
+					<option value="SM">San Marino</option>
+					<option value="ST">Sao Tome and Principe</option>
+					<option value="SA">Saudi Arabia</option>
+					<option value="SN">Senegal</option>
+					<option value="RS">Serbia</option>
+					<option value="SC">Seychelles</option>
+					<option value="SL">Sierra Leone</option>
+					<option value="SG">Singapore</option>
+					<option value="SX">Sint Maarten (Dutch part)</option>
+					<option value="SK">Slovakia</option>
+					<option value="SI">Slovenia</option>
+					<option value="SB">Solomon Islands</option>
+					<option value="SO">Somalia</option>
+					<option value="ZA">South Africa</option>
+					<option value="GS">South Georgia and the South Sandwich Islands</option>
+					<option value="SS">South Sudan</option>
+					<option value="ES">Spain</option>
+					<option value="LK">Sri Lanka</option>
+					<option value="SD">Sudan</option>
+					<option value="SR">Suriname</option>
+					<option value="SJ">Svalbard and Jan Mayen</option>
+					<option value="SZ">Swaziland</option>
+					<option value="SE">Sweden</option>
+					<option value="CH">Switzerland</option>
+					<option value="SY">Syrian Arab Republic</option>
+					<option value="TW">Taiwan, Province of China</option>
+					<option value="TJ">Tajikistan</option>
+					<option value="TZ">Tanzania, United Republic of</option>
+					<option value="TH">Thailand</option>
+					<option value="TL">Timor-Leste</option>
+					<option value="TG">Togo</option>
+					<option value="TK">Tokelau</option>
+					<option value="TO">Tonga</option>
+					<option value="TT">Trinidad and Tobago</option>
+					<option value="TN">Tunisia</option>
+					<option value="TR">Turkey</option>
+					<option value="TM">Turkmenistan</option>
+					<option value="TC">Turks and Caicos Islands</option>
+					<option value="TV">Tuvalu</option>
+					<option value="UG">Uganda</option>
+					<option value="UA">Ukraine</option>
+					<option value="AE">United Arab Emirates</option>
+					<option value="GB">United Kingdom</option>
+					<option value="US">United States</option>
+					<option value="UM">United States Minor Outlying Islands</option>
+					<option value="UY">Uruguay</option>
+					<option value="UZ">Uzbekistan</option>
+					<option value="VU">Vanuatu</option>
+					<option value="VE">Venezuela, Bolivarian Republic of</option>
+					<option value="VN">Viet Nam</option>
+					<option value="VG">Virgin Islands, British</option>
+					<option value="VI">Virgin Islands, U.S.</option>
+					<option value="WF">Wallis and Futuna</option>
+					<option value="EH">Western Sahara</option>
+					<option value="YE">Yemen</option>
+					<option value="ZM">Zambia</option>
+					<option value="ZW">Zimbabwe</option>
+				</select>
+
+			</div>
+		</div>
+
+		<div id="spin_panel">
+			<img class="image" src="./images/nobel-copy.jpg" alt="nobel Prize">
+		</div>
+
+		<div id="Main_Section">
+			<div id="Extra_panel" ></div>
+			<div id="id01"></div>
+			<div class="result-panel"></div>
+		</div>
+
+		<script>
+			//    declares a global variable for the parseOBJ
+			var parsedObj
+			var xmlhttp = new XMLHttpRequest();
+			// JSON file from the jdorfman/awesome-json-datasets repo
+			var url = "http://api.nobelprize.org/v1/laureate.json";
+			
+			
+			xmlhttp.onreadystatechange = function () {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+					parsedObj = JSON.parse(xmlhttp.responseText);
+				}
+			}
+
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+
+
+			//<!--MAIN FUNCTION -->
+			//upon pressing the submit button instantiates the function 
+			document.getElementById("submit_button").onclick = function () {
+				displayResult(parsedObj)
+			};
+
+			function displayResult(obj) {
+				//assign the word Array to the obj.laureates
+				Array = obj.laureates;
+
+				var Genderbtn = "<label>"
+				// generates the radio buttons
+				Genderbtn += "<input type=radio class=radio name=gender checked onclick=Displayall() value=all>All<br>"
+
+				Genderbtn += "<input type=radio name=gender onclick=DisplayMale() value=male>Male<br>"
+
+				Genderbtn += "<input type=radio name=gender onclick=DisplayFemale() value=female>Female<br>"
+
+				var GenInfo = "<table border=1 >";
+
+				GenInfo += "<tr><th>Name</th><th>Category</th><th>PrizeYear</th></tr>";
+
+				for (var i = 0; i < Array.length; i++) {
+
+					if (Array[i].prizes[0].year >= document.getElementById("RangeMin").value && Array[i].prizes[0].year <=
+						document.getElementById("RangeMax").value) {
+
+						// console.log(Array[i].prizes[0].year )
+						if (Array[i].prizes[0].category == document.getElementById("cat_select").value) {
+
+							if (document.getElementById("selcounties").value == "ALL") {
+
+								var id = Array[i].id;
+								var firstname = Array[i].firstname;
+								var surname = Array[i].surname;
+								var gender = Array[i].gender;
+								var category = Array[i].prizes[0].category;
+								var Year = Array[i].prizes[0].year;
+
+								GenInfo += "<tr><td>" + surname + ', ' + firstname +
+									"<button class=\"infobtn\" onclick=myextra(" + Array[i].id + ") id=" + id +
+									" >Info</button>" + "</td><td>" + category + "</td><td>" + Year + "</td></tr>";
+								
+							} else if (Array[i].bornCountryCode == document.getElementById("selcounties").value) {
+
+
+								var firstname = Array[i].firstname;
+								var surname = Array[i].surname;
+								var gender = Array[i].gender;
+								var category = Array[i].prizes[0].category;
+								var Year = Array[i].prizes[0].year;
+
+
+								GenInfo += "<tr><td>" + surname + ' ' + firstname + "<button class=infobtn onclick=myextra(" +
+									Array[i].id + ")>Info</button>" + "</td><td>" + category + "</td><td>" + Year + "</td></tr>";
+							}
+						}
+					}
+				}
+				//creates the table, calls the Genderbtn to appear
+				GenInfo += "</table>"; //create closing tag for table 
+				document.getElementById("Gender_select").innerHTML = Genderbtn;
+				document.getElementById("id01").innerHTML = GenInfo;
+				console.log(GenInfo)
+			}
+
+			// variables to get the the value from the slider and send it to the input box for the min value
+			var slider = document.getElementById("RangeMin"); {}
+			var output = document.getElementById("textInputmin");
+			output.innerHTML = slider.value;
+
+			// Update the current slider value (each time you drag the slider handle)
+			slider.oninput = function () {
+				output.innerHTML = this.value;
+			};
+
+			function updateTextInput1(val) {
+				document.getElementById('textInputmin').value = val;
+			}
+
+			// variables to get the the value from the sleder and send it to the input box for the max value
+			var slider = document.getElementById("RangeMax");
+			var output = document.getElementById("textInputmax");
+
+			output.innerHTML = slider.value; // Display the default slider value
+
+			// Update the current slider value (each time you drag the slider handle)
+			slider.oninput = function () {
+				output.innerHTML = this.value;
+			};
+
+			function updateTextInput2(val) {
+				document.getElementById('textInputmax').value = val;
+			}
+
+			//<!-- DISPLAY ALL FUNCTION -->   
+			function Dispalyall() {
+
+				var Genderbtn = "<label>"
+
+				Genderbtn += "<input type=radio name=gender checked onclick=DisplayAll() value=all>All<br>"
+				Genderbtn += "<input type=radio name=gender  onclick=DisplayMale() value=male>Male<br>"
+				Genderbtn += "<input type=radio name=gender onclick=DisplayFemale() value=female>Female<br>"
+
+				var GenInfo = "<table border = 1 >";
+
+				GenInfo += "<tr><th>Name</th><th>Category</th><th>PrizeYear</th></tr>";
+
+				for (var i = 0; i < Array.length; i++) {
+
+					if (Array[i].prizes[0].year >= document.getElementById("RangeMin").value && Array[i].prizes[0].year <=
+						document.getElementById("RangeMax").value) {
+
+
+						if (Array[i].prizes[0].category == document.getElementById("cat_select").value && Array[i].gender ==
+							"male") {
+							i
+
+							var firstname = Array[i].firstname;
+							var surname = Array[i].surname;
+							var gender = Array[i].gender;
+							var category = Array[i].prizes[0].category;
+							var Year = Array[i].prizes[0].year;
+
+							GenInfo += "<tr><td>" + surname + ', ' + firstname + "<button class=infobtn onclick=myextra(" +
+								Array[i].id + ")>Info</button>" + "</td><td>" + category + "</td><td>" + Year + "</td></tr>";
+
+						}
+					}
+
+				}
+				GenInfo += "</table>";
+				document.getElementById("Gender_select").innerHTML = Genderbtn;
+				document.getElementById("id01").innerHTML = GenInfo;
+			}
+
+			//<!--MALE DISPLAY FUNCTION -->   
+			function DisplayMale() {
+
+				var Genderbtn = "<label>"
+
+				Genderbtn += "<input type=radio name=gender onclick=DisplayAll() value=all>All<br>"
+				Genderbtn += "<input type=radio name=gender checked onclick=DisplayMale() value=male>Male<br>"
+				Genderbtn += "<input type=radio name=gender onclick=DisplayFemale() value=female>Female<br>"
+
+				var GenInfo = "<table border = 1 >";
+
+				GenInfo += "<tr><th>Name</th><th>Category</th><th>PrizeYear</th></tr>";
+
+				for (var i = 0; i < Array.length; i++) {
+
+					if (Array[i].prizes[0].year >= document.getElementById("RangeMin").value && Array[i].prizes[0].year <=
+						document.getElementById("RangeMax").value) {
+
+
+						if (Array[i].prizes[0].category == document.getElementById("cat_select").value && Array[i].gender ==
+							"male") {
+							i
+
+							var firstname = Array[i].firstname;
+							var surname = Array[i].surname;
+							var gender = Array[i].gender;
+							var category = Array[i].prizes[0].category;
+							var Year = Array[i].prizes[0].year;
+
+							GenInfo += "<tr><td>" + surname + ', ' + firstname + "<button class=infobtn onclick=myextra(" +
+								Array[i].id + ")>Info</button>" + "</td><td>" + category + "</td><td>" + Year + "</td></tr>";
+
+						}
+					}
+
+				}
+				GenInfo += "</table>";
+				document.getElementById("Gender_select").innerHTML = Genderbtn;
+				document.getElementById("id01").innerHTML = GenInfo;
+			}
+
+
+			//<!--FEMALE DISPLAY FUNCTION -->     
+			function DisplayFemale() {
+
+				var Genderbtn = "<label>"
+
+				Genderbtn += "<input type=radio name=gender onclick=DisplayAll() value=all>All<br>"
+				Genderbtn += "<input type=radio name=gender onclick=DisplayMale()  value=male>Male<br>"
+				Genderbtn += "<input type=radio name=gender checked onclick=DisplayFemale() value=female>Female<br>"
+
+
+				var GenInfo = "<table border = 1 >";
+
+				GenInfo += "<tr><th>Name</th><th>Category</th><th>PrizeYear</th></tr>";
+
+				for (var i = 0; i < Array.length; i++) {
+
+					if (Array[i].prizes[0].year >= document.getElementById("RangeMin").value && Array[i].prizes[0].year <=
+						document.getElementById("RangeMax").value) {
+
+
+						if (Array[i].prizes[0].category == document.getElementById("cat_select").value && Array[i].gender ==
+							"female") {
+
+
+							var firstname = Array[i].firstname;
+							var surname = Array[i].surname;
+							var gender = Array[i].gender;
+							var category = Array[i].prizes[0].category;
+							var Year = Array[i].prizes[0].year;
+
+							GenInfo += "<tr><td>" + surname + ', ' + firstname + "<button class=infobtn onclick=myextra(" +
+								Array[i].id + ")>Info</button>" + "</td><td>" + category + "</td><td>" + Year + "</td></tr>";
+
+						}
+					}
+
+				}
+				GenInfo += "</table>";
+				document.getElementById("Gender_select").innerHTML = Genderbtn;
+				document.getElementById("id01").innerHTML = GenInfo;
+
+			};
+
+
+			//<!-- EXTRA INFO SECTION -->
+			function myextra(id) {
+
+				var x = document.getElementById("Extra_panel");
+
+				if (x.style.display === "none") {
+					x.style.display = "block";
+
+
+					var infotab = "<ol>";
+
+
+					var laureates = parsedObj.laureates;
+					for (var i = 0; i < laureates.length; i++) {
+						var laurid = laureates[i].id;
+						if (laurid == id) {
+
+							// creating var for required paths 
+							var birthdate = laureates[i].born;
+							var deathdate = laureates[i].died;
+							var birthcity = laureates[i].bornCity
+							var firstname = laureates[i].firstname;
+							var surname = laureates[i].surname;
+
+
+							// declaring new variables for nested data
+							infotab += "<li>Name: " + firstname.slice(0, 4) + '\xC2\xA0' + surname.slice(0, 4) +
+								"</li><li>Year of Birth: " + birthdate.slice(0, 4) + "</li><li>Year of Death: " + deathdate
+								.slice(0, 4) + "</li><li>City of birth: " + birthcity + "</li>";
+
+							// for loop that iterates through the prizes array since some have more than 1 Nobel
+							for (var j = 0; j < laureates[i].prizes.length; j++) {
+								var motivation = laureates[i].prizes[j].motivation;
+								infotab += "<li>Motivation: " + motivation + "</li>";
+
+								// for loop to extraxt affiliations information
+								for (var z = 0; z < laureates[i].prizes[j].affiliations.length; z++) {
+									var affiliation = laureates[i].prizes[j].affiliations[z];
+
+
+
+									//dislay data based on id
+									infotab += "<li>Affiliations</li><li>Affiliation Name: " + affiliation.name +
+										"</li><li>Affiliation City: " + affiliation.city + "</li><li>Affiliation country: " +
+										affiliation.country + "</li>";
+
+								}
+
+							}
+						}
+						infotab += "</ol>";
+						document.getElementById("Extra_panel").innerHTML = infotab;
+
+					}
+				} else {
+					x.style.display = "none";
+				}
+			}
+		</script>
+
+		<footer class="footer"></footer>
+
+</body>
+
+</html>
+
+<!--
+Hi there,
+
+The HTML file ("index") contains both the HTML code and the javascipt.
+The javascript bit starts with retriving the JSON data, then waits for the "submit" button to be pressed that calls the main function (line:360)
+ which searches through the data for the required specifications and shows it on the table.
+Also it will make the 3 radio buttons for the gender appear...each button has its own function (line:444, line:483, line:523)
+ that reflects the main function and once pressed they will operate the same way.
+The main table generates an info button for each name, that shows extra information for that specific person(line:565).
+
+Thnak you
+
+
+REFERENCES:    
+To Learn the layout: http://learnlayout.com/max-width.html
+For the white-space:nowrap: https://css-tricks.com/forums/topic/css-width-fit-to-content/
+Various issues https://www.webdeveloper.com/forum/d/289431-resolved-cannot-set-property-innerhtml-of-null
+https://stackoverflow.com/questions/21144149/javascript-error-uncaught-referenceerror-usernumber-is-not-defined-on-line-43
+Ideas for sliders: https://seiyria.com/bootstrap-slider/
+https://medialoot.com/blog/how-to-code-a-homepage-template-with-html5-and-css3/
+https://www.w3schools.com/howto/howto_js_portfolio_filter.asp
+https://www.w3schools.com/howto/howto_js_filter_elements.asp
+https://www.w3schools.com/howto/howto_js_filter_lists.asp
+https://www.w3schools.com/howto/howto_js_filter_table.asp
+https://www.w3schools.com/howto/howto_js_sort_table.asp
+https://www.w3schools.com/tags/tag_comment.asp
+https://www.w3schools.com/howto/howto_js_rangeslider.asp
+https://css-tricks.com/couple-takes-sticky-footer/
+https://css-tricks.com/almanac/properties/p/position/
+https://www.washington.edu/accesscomputing/webd2/student/unit3/module5/lesson1.html
+https://www.nickang.com/add-event-listener-for-loop-problem-in-javascript/
+https://stackoverflow.com/questions/19586137/addeventlistener-using-for-loop-and-passing-values
+https://stackoverflow.com/questions/10675505/error-in-javascript-object-not-defined
+https://stackoverflow.com/questions/951791/javascript-global-error-handling
+https://stackoverflow.com/questions/36419195/get-index-from-a-json-object-with-value
+https://stackoverflow.com/questions/4231327/index-value-of-array
+https://www.sitepoint.com/dynamic-tables-json/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+https://www.quackit.com/javascript/tutorial/javascript_for_loop.cfm
+https://stackoverflow.com/questions/21477717/how-to-call-a-js-function-using-onclick-event
+Tutorial on grids: https://www.youtube.com/watch?reload=9&v=jV8B24rSN5o
+-->
